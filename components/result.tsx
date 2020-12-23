@@ -1,7 +1,7 @@
 
 const Result = ({avatar_url, html_url, login, repos_url, organizations_url}) => {
     return (
-        <div className="bg-gray-100 p-6 rounded shadow hover:shadow-xl">
+        <div className="bg-gray-100 p-6 rounded shadow hover:shadow-xl my-2 lg:my-0">
           <a href={html_url} target="_blank" >
               <img className="h-40 rounded-full object-cover object-center mb-6" src={avatar_url} alt={`github user ${login}`} />
               <p className="tracking-widest text-indigo-500 text-xs font-medium title-font">{login}</p>

@@ -1,16 +1,7 @@
 /* Start purging... */
 @tailwind components;
-/* Stop purging. */
-
-input.search{
-    @apply w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out;
-}
-
-/* Write your own custom component styles here */
-.btn-blue {
-  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
-}
 
 /* Start purging... */
 @tailwind utilities;
+/* Stop purging. */
 /* Stop purging. */

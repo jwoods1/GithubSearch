@@ -1,15 +1,14 @@
 
-const SearchForm = ({query, setQuery, handleSubmit}) => {
+const SearchForm = ({query, setQuery, handleSubmit, searching}) => {
    
     return (
-    <section className="text-gray-700 body-font">
-        <form onSubmit={handleSubmit} className="container px-5 py-24 mx-auto">
-            <div className="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 items-end">
-                <div className="relative sm:mr-4 mb-4 sm:mb-0 flex-grow w-full">
-                    <label htmlFor="search" className="leading-7 text-sm text-gray-600">Search</label>
-                    <input  value={query}  onChange={({target}) => setQuery(target.value)} type="text" name="search" className="search" />
+    <section className="text-gray-700 body-font my-4">
+        <form onSubmit={handleSubmit} className="container mx-auto" >
+            <div className="sm:grid sm:grid-cols-2 gap-2 items-end">
+                <div className="">
+                    <input placeholder="Search by name or email" value={query}  onChange={({target}) => setQuery(target.value)} type="text" name="search" className="block pl-2 w-11/12 rounded focus:border-green-500 text-base outline-none text-gray-700 py-1  leading-8 transition-colors duration-200 ease-in-out" />
                 </div>
-                <button type="submit" className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Button</button>
+                <button type="submit" disabled={searching || query.length === 0}  className="text-white w-11/12 lg:w-48 justify-self-start mt-2 lg:mt-0 lg:ml-4 bg-green-500 border-0 py-2 focus:outline-none hover:bg-green-600 rounded text-lg">Search</button>
             </div>
         </form>
         

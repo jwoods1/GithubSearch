@@ -35,22 +35,22 @@ export default function Home() {
       setSearching(false);
   }
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto py-2 lg:p-4">
       <Head>
         <title>Github User Search</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="min-h-screen">
-      <h1 className="text-green-600 text-2xl p-4 ">
+      <main className="min-h-11/12 lg:min-h-screen">
+      <h1 className="text-green-600 text-2xl px-1">
          Github User Search 
         </h1>
-        <SearchForm query={query} setQuery={setQuery} handleSubmit={handleSubmit}/>
-        <div className="grid grid-cols-3 gap-2">
-        <div className={search.length > 0 ? "col-span-3" : "hidden"} >Results for: {search}, total: {results.total}</div>
+        <SearchForm query={query} setQuery={setQuery} handleSubmit={handleSubmit} searching={searching}/>
+        <div className="min-h-11/12 sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-6 gap-2">
+        <div className={search.length > 0 ? "lg:col-span-6 sm:col-span-2" : "hidden"} >Results for: {search}, total: {results.total}</div>
             {results.data && results.data.map((x,i) => {
                 return <Result key={i} {...x} />
             })}
-             {searching && (<div className="flex h-48 w-48 relative col-start-2 col-end-2 justify-self-center">
+             {searching && (<div className="flex h-48 w-48 relative sm:col-start-1 lg:col-start-2 col-end-2 justify-self-center">
         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
         <span className="relative inline-flex rounded-full h-full w-full bg-green-500"></span>
       </div>)}
