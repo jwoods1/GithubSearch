@@ -9,10 +9,10 @@ const SearchForm = ({query, setQuery, handleSubmit}) => {
                     <label htmlFor="search" className="leading-7 text-sm text-gray-600">Search</label>
                     <input  value={query}  onChange={({target}) => setQuery(target.value)} type="text" name="search" className="search" />
                 </div>
-                <button type="submit" className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+                <button type="submit" className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Button</button>
             </div>
         </form>
-       
+        
     </section>
     )
 }

@@ -19,7 +19,7 @@ const Paginator = ({page, links, total}) => {
     </div>
         
     }
-    return "";
+    return <div></div>;
 }
 
 export default Paginator;

@@ -1,15 +1,28 @@
 import ParseLink from "parse-link-header"
 
 export const GetData = async (url) => {
-   let resp = await fetch(url);
-   if(resp.ok){
-    let pagination = GetPaginationLinks(resp);
-    let data = await resp.json();
-    return {pagination,
-        data}
+   
+   // check for rate limit
+   let result = {ratelimit: false, pagination:{},
+   data: {items:[], total_count: 0}}
+   let resp = await fetch(url).catch((d) => {
+    console.log("Error Fetching Data");
+    return d;
+   });
+   switch (resp.status){
+    case 200: 
+         let data = await resp.json();
+         result.pagination = GetPaginationLinks(resp);
+         result.data = data;
+        break;
+    case 403:
+        result.ratelimit = true;
+            break;
+        default: 
+            console.log('defauilt');
+            break;
    }
-   return null
-  
+   return result;
 };
 
 const GetPaginationLinks = (resp) => {
