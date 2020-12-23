@@ -10,7 +10,7 @@ import Paginator from '../components/paginator';
 export default function Home() {
   const [query, setQuery] = useState('');
   const [search, setSearch] = useState('');
-  const [results, setResults] = useState({pagination: {last:{page: ""}}, data:[], total: 0, ratelimit: false});
+  const [results, setResults] = useState({pagination: {}, data:[], total: 0, ratelimit: false});
   const [searching, setSearching] = useState(false);
   const page = async (url) =>{
     setSearching(true);
