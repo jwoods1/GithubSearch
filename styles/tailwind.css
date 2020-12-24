@@ -5,3 +5,9 @@
 @tailwind utilities;
 /* Stop purging. */
 /* Stop purging. */
+body{
+    @apply bg-gray-800 opacity-80;
+}
+.search{
+    @apply w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out;
+}
