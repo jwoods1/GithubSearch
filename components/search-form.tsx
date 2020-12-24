@@ -1,40 +1,26 @@
 const SearchForm = ({ query, setQuery, handleSubmit, searching }) => {
   return (
-    <section className="text-gray-700 body-font my-4 lg:w-2/3 mx-auto">
-      <form onSubmit={handleSubmit} className="grid grid-cols-2">
-        <div className="relative mx-4 lg:mx-0">
-          <span className="absolute inset-y-0 left-0 pl-3 flex items-center">
-            <svg
-              className="h-5 w-5 text-gray-500"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              ></path>
-            </svg>
-          </span>
+    <section className="text-gray-700 body-font my-4 w-2/3 mx-auto flex justify-center ">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col md:flex-row justify-center"
+      >
+        <div className="relative mx-0 flex-1">
           <input
-            className="form-input sm:w-11/12 lg:w-11/12 rounded-md pl-10 pr-4 py-2 text-base outline-none"
+            className="md:mr-2 py-2 px-8 border-0 text-lg rounded focus:outline-none"
             type="text"
             placeholder="Search by name or email"
             value={query}
             onChange={({ target }) => setQuery(target.value)}
           />
         </div>
-        <div>
-          <button
-            type="submit"
-            disabled={searching || query.length === 0}
-            className=" text-white ml-8 px-8 bg-green-500 border-0 py-2 focus:outline-none hover:bg-green-600 rounded text-lg"
-          >
-            Search
-          </button>
-        </div>
+        <button
+          type="submit"
+          disabled={searching || query.length === 0}
+          className="mt-2 md:mt-0 disabled:opacity-50 text-white px-8 bg-green-500 border-0 py-2 focus:outline-none hover:bg-green-600 rounded text-lg "
+        >
+          Search
+        </button>
       </form>
     </section>
   );

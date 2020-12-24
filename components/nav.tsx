@@ -2,7 +2,7 @@ const NavBar = () => {
   return (
     <header className="flex justify-between items-center py-4 px-6">
       <div className="flex items-center">
-        <h1 className="text-yellow-400">Github User Search</h1>
+        <h1 className="text-green-200">Github User Search</h1>
       </div>
       <div className="relative">
         <div x-data="{ dropdownOpen: false }" className="relative">

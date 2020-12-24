@@ -61,7 +61,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      <main className="container mx-auto py-2 lg:p-4 min-h-11/12 lg:min-h-screen">
+      <main className="container mx-auto py-2 lg:p-4 min-h-screen ">
         <SearchForm
           query={query}
           setQuery={setQuery}
@@ -69,7 +69,7 @@ export default function Home() {
           searching={searching}
         />
         <Meta search={search} total={results.total} />
-        <div className="min-h-11/12 mx-auto w-full sm:grid sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid lg:grid-cols-3 gap-2">
+        <div className="min-h- mx-auto w-full sm:grid sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid lg:grid-cols-3 gap-2">
           {results.data &&
             results.data.map((x, i) => {
               return <Result key={i} {...x} />;
