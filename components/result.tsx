@@ -56,7 +56,9 @@ const Result = ({
               <tr>
                 <td className="px-2 py-2 text-gray-500 font-semibold">Repos</td>
                 <td className="px-2 py-2">
-                  <a href={repos_url}>{public_repos}</a>
+                  <a href={`${html_url}?tab=repositories`} target="_blank">
+                    {public_repos}
+                  </a>
                 </td>
               </tr>
               <tr>
